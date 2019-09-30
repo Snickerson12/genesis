@@ -1,0 +1,7 @@
+<%= form_with model: @playlist do |f| %>
+    <%= f.label "name" %>
+    <%= f.text_field :name %>
+    <p><%= f.collection_select(:creator_id, User.all, :id, :name) %></p>
+    <%# <%= f.collection_check_boxes(:song_ids, Song.all, :id, :title) %> 
+    <p><%= f.submit %></p>
+<% end %>
