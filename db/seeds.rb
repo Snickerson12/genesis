@@ -9,11 +9,10 @@
 Song.destroy_all
 User.destroy_all
 
-10.times do 
+10.times do
     Song.create(title: Faker::Music::GratefulDead.song, artist: Faker::Music::RockBand.name, genre: Faker::Music.genre, album: Faker::Music.album)
 end
 
-5.times do 
+5.times do
     User.create(name: Faker::Book.author)
-end 
-
+end

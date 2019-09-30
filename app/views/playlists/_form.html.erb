@@ -1,7 +1,13 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error|  %>
+    <%= error %>
+  <% end %>
+<% end %>
+
 <%= form_with model: @playlist do |f| %>
     <%= f.label "name" %>
     <%= f.text_field :name %>
     <p><%= f.collection_select(:creator_id, User.all, :id, :name) %></p>
-    <%# <%= f.collection_check_boxes(:song_ids, Song.all, :id, :title) %> 
+    <%= f.collection_check_boxes(:song_ids, @songs, :id, :title, include_hidden: false)  %>
     <p><%= f.submit %></p>
 <% end %>

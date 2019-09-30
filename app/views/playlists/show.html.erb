@@ -1,0 +1,14 @@
+<h1>Playlist Name:<%= @playlist.name %></h1>
+<h2>Created by: <%= @playlist.creator.name %></h2>
+
+<h3>Songs:</h3>
+<ul>
+  <% @playlist.songs.each do |song| %>
+    <li><%= song.title %></li>
+    <% end %>
+</ul>
+
+<p><%= link_to "edit playlist", edit_playlist_path(@playlist) %></p>
+<p><%= link_to "back", playlists_path %></p>
+<p><%= button_to "Delete Playlist", @playlist, method: :delete, data: { confirm: "Really?" } %>
+</p>
