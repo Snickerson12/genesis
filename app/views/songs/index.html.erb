@@ -1,0 +1,9 @@
+<h1>All Songs</h1>
+
+<ul>
+  <% @songs.each do |song| %>
+    <li><%= link_to song.title, song %></li>
+  <% end %>
+</ul>
+
+<%= button_to "Home", root_path, method: "get" %>
