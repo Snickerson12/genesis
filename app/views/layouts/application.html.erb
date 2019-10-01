@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <%= form_with url: logout_path, method: "delete" do |f| %>
+        <%= f.submit "Log out #{current_user.name}" %>
+      <% end %>
+    <% else %>
+      <%= link_to "sign in", login_path %>
+    <% end %>
+
     <%= yield %>
+
   </body>
 </html>
