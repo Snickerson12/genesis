@@ -1,8 +1,19 @@
+<div class = "header">
 <h1>Genesis Project</h1>
+</div>
 
+<div class="flex-container">
+  <div><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXadOVCgGhS7j" width="400" height="350" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
+  <div><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8jnAPF7Iiqp" width="400" height="350" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
+  <div><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4osfY3zybD2" width="400" height="350" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
+</div>
 
-<h1>Logged in as: <%= @user.name %></h1>
+<div class="navbar-b">
+  <li> <%= link_to "View All Playlists", playlists_path, method: "get" %></li>
+</div>
 
+<!--
 <%= button_to "View All Playlists", playlists_path, method: "get" %>
 <%= button_to "View All Songs", songs_path, method: "get" %>
 <%= button_to "View All Users", users_path, method: "get" %>
+-->
