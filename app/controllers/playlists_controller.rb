@@ -17,11 +17,6 @@ class PlaylistsController < ApplicationController
         @playlist = Playlist.new(playlist_params)
         if @playlist.valid?
           @playlist.save
-          params[:playlist][:song_ids].each do |i|
-            song = Song.all.find_by(id: i)
-            @playlist.songs << song
-          end
-          @playlist.save
           redirect_to playlist_path(@playlist)
         else
           flash[:errors] = @playlist.errors.full_messages
