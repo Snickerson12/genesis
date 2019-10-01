@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   delete "logout", to: "sessions#destroy", as: "logout"
   resources :playlists
   resources :songs, only: [:index, :show]
-  resources :users, only: [:new, :create]
+  resources :users, except: [:destroy]
 
 end

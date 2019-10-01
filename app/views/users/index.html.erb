@@ -1,0 +1,5 @@
+<% @users.each do |user| %>
+    <%= link_to user.name, user %>
+<% end %>
+
+<%= button_to "Back", root_path, method: 'get' %>
