@@ -5,8 +5,3 @@
 
 <%= button_to "View All Playlists", playlists_path, method: "get" %>
 <%= button_to "View All Songs", songs_path, method: "get" %>
-<%= button_to "New User", new_user_path, method: "get" %>
-
-<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-  <input type=submit value='logout'>
-<% end %>
