@@ -17,8 +17,7 @@ class PlaylistsController < ApplicationController
 
         @playlist = Playlist.new(playlist_params)
         @playlist.creator_id = session[:user_id]
-        p @playlist
-        puts "************************************************"
+
         if @playlist.valid?
           @playlist.save
           redirect_to playlist_path(@playlist)
@@ -34,6 +33,7 @@ class PlaylistsController < ApplicationController
 
     def update
       @playlist.assign_attributes(playlist_params)
+      
       if @playlist.valid?
         @playlist.save
         @playlist.songs.clear

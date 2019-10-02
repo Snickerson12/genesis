@@ -4,13 +4,13 @@
   <% end %>
 <% end %>
 
-<%= form_with model: @playlist do |f| %>
-    <%= f.label "name" %>
-    <%= f.text_field :name %><br>
-    <%= f.hidden_field(:creator_id) %>
-    <%= f.label 'Private?' %>
-    <%= f.check_box :private %><br>
-    <%= f.label "songs:" %><br>
-    <%= f.collection_check_boxes(:song_ids, @songs, :id, :title, include_hidden: false)  %>
-    <p><%= f.submit %></p>
-<% end %>
+  <%= form_with model: @playlist do |f| %>
+      <%= f.label "name" %>
+      <%= f.text_field :name %><br>
+      <%= f.hidden_field(:creator_id) %>
+      <%= f.label 'Private?' %>
+      <%= f.check_box :private %><br>
+      <%= f.label "songs:" %><br>
+      <%= f.collection_check_boxes(:song_ids, @songs, :id, :title, include_hidden: false)  %>
+      <p><%= f.submit %></p>
+  <% end %>
