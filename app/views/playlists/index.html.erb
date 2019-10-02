@@ -3,7 +3,9 @@
 <ul>
 
 <% @playlists.each do |playlist| %>
+  <% if playlist.private == false %>
   <li><%= link_to playlist.name, playlist_path(playlist) %> by <%= playlist.creator.name %></li>
+  <% end %>
 <% end %>
 </ul>
 

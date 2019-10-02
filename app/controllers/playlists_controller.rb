@@ -14,7 +14,11 @@ class PlaylistsController < ApplicationController
     end
 
     def create
+
         @playlist = Playlist.new(playlist_params)
+        @playlist.creator_id = session[:user_id]
+        p @playlist
+        puts "************************************************"
         if @playlist.valid?
           @playlist.save
           redirect_to playlist_path(@playlist)
@@ -57,15 +61,9 @@ class PlaylistsController < ApplicationController
     end
 
     def share_playlist
-      p @playlist
-      puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
       @playlist.listeners.clear
       params[:playlist][:listener_ids].each do |id|
         user = User.find_by(id: id)
-        p user
-        puts "***********************************"
-        p @playlist
-        puts "************************************"
         @playlist.listeners << user
       end
       redirect_to playlist_path(@playlist)
@@ -74,12 +72,13 @@ class PlaylistsController < ApplicationController
     private
 
     def playlist_params
-        params.require(:playlist).permit(:name, :creator_id, :song_ids => [])
+        params.require(:playlist).permit(:name, :private, :creator_id, :song_ids => [])
     end
 
     def find_playlist
       @playlist = Playlist.find(params[:id])
     end
+
 
 
 end

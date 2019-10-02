@@ -16,6 +16,8 @@
   <% end %>
 </ul>
 
+<p>This playlist is private: <%= @playlist.private %></p>
+
 <%= button_to "edit playlist", edit_playlist_path(@playlist), method: "get" %> <%= button_to "share playlist", share_path(@playlist), method: "get" %>
 <p><%= link_to "back", playlists_path %></p>
 <p><%= button_to "Delete Playlist", @playlist, method: :delete, data: { confirm: "Really?" } %></p>
