@@ -1,8 +1,8 @@
 
-*/
 
-.header {
-    margin: 10px auto;
+h1 {
+    color: #9D9A9A;
+    text-align: center;
 }
 
 .logo {
@@ -53,6 +53,7 @@
 
 .flex-container {
     display: flex;
+    align-items: center;
     justify-content: space-around;
   }
 
@@ -63,13 +64,13 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-  }
-  .navbar-b li a {
+}
+.navbar-b li a {
     display: block;
     text-decoration: none;
-    }
-  /* Style the links inside the navigation bar */
-  .navbar-b li {
+}
+/* Style the links inside the navigation bar */
+.navbar-b li {
     float: right;
     display: block;
     color: #f2f2f2;
@@ -77,19 +78,31 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-  }
+}
 
-  .navbar-b li a:visited {
+.navbar-b li a:visited {
     text-decoration: none;
     color: #fff;
-    }
+}
 
-    .navbar-b li a:hover {
+.navbar-b li a:hover {
     color: #111;  
-    } 
+} 
   
-  /* Add a color to the active/current link */
-  .navbar-b.active {
+/* Add a color to the active/current link */
+.navbar-b.active {
     background-color: #4CAF50;
     color: white;
-  }
+}
+
+ .icon {
+  float: left;
+  color: white;
+  padding: 0;
+}
+.icon > li {
+  padding: 14px 16px;
+  position: relative;
+  white-space: nowrap;
+  color: white;
+}
