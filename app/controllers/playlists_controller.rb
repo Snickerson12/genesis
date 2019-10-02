@@ -1,5 +1,5 @@
 class PlaylistsController < ApplicationController
-    before_action :find_playlist, only: [:show, :edit, :update, :destroy]
+    before_action :find_playlist, only: [:show, :edit, :update, :destroy, :share, :share_playlist]
 
     def index
         @playlists = Playlist.all
@@ -50,6 +50,25 @@ class PlaylistsController < ApplicationController
       @playlist.songs.clear
       @playlist.destroy
       redirect_to playlists_path
+    end
+
+    def share
+      @users = User.all
+    end
+
+    def share_playlist
+      p @playlist
+      puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+      @playlist.listeners.clear
+      params[:playlist][:listener_ids].each do |id|
+        user = User.find_by(id: id)
+        p user
+        puts "***********************************"
+        p @playlist
+        puts "************************************"
+        @playlist.listeners << user
+      end
+      redirect_to playlist_path(@playlist)
     end
 
     private

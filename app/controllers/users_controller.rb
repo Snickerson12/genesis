@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @playlists = Playlist.all
+    @userplaylists = UserPlaylist.all
   end
 
   def index

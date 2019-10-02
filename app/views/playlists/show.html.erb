@@ -8,7 +8,14 @@
     <% end %>
 </ul>
 
-<p><%= link_to "edit playlist", edit_playlist_path(@playlist) %></p>
+<h2>This playlist is shared with:</h2>
+
+<ul>
+  <% @playlist.listeners.each do |listener| %>
+    <li><%= link_to listener.name, listener %></li>
+  <% end %>
+</ul>
+
+<%= button_to "edit playlist", edit_playlist_path(@playlist), method: "get" %> <%= button_to "share playlist", share_path(@playlist), method: "get" %>
 <p><%= link_to "back", playlists_path %></p>
-<p><%= button_to "Delete Playlist", @playlist, method: :delete, data: { confirm: "Really?" } %>
-</p>
+<p><%= button_to "Delete Playlist", @playlist, method: :delete, data: { confirm: "Really?" } %></p>
