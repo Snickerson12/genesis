@@ -1,5 +1,13 @@
-<% @users.each do |user| %>
-    <%= link_to user.name, user %>
-<% end %>
+<h1>All Users</h1>
 
+
+<ul>
+
+  <% @users.each do |user| %>
+    <li>
+      <%= link_to user.name, user %>
+    </li>
+  <% end %>
+
+</ul>
 <%= button_to "Back", root_path, method: 'get' %>

@@ -1,5 +1,5 @@
 class PlaylistsController < ApplicationController
-    before_action :find_playlist, only: [:show, :edit, :update, :destroy]
+    before_action :find_playlist, only: [:show, :edit, :update, :destroy, :share, :share_playlist]
 
     def index
         @playlists = Playlist.all
@@ -14,7 +14,11 @@ class PlaylistsController < ApplicationController
     end
 
     def create
+
         @playlist = Playlist.new(playlist_params)
+        @playlist.creator_id = session[:user_id]
+        p @playlist
+        puts "************************************************"
         if @playlist.valid?
           @playlist.save
           redirect_to playlist_path(@playlist)
@@ -52,15 +56,29 @@ class PlaylistsController < ApplicationController
       redirect_to playlists_path
     end
 
+    def share
+      @users = User.all
+    end
+
+    def share_playlist
+      @playlist.listeners.clear
+      params[:playlist][:listener_ids].each do |id|
+        user = User.find_by(id: id)
+        @playlist.listeners << user
+      end
+      redirect_to playlist_path(@playlist)
+    end
+
     private
 
     def playlist_params
-        params.require(:playlist).permit(:name, :creator_id, :song_ids => [])
+        params.require(:playlist).permit(:name, :private, :creator_id, :song_ids => [])
     end
 
     def find_playlist
       @playlist = Playlist.find(params[:id])
     end
+
 
 
 end
