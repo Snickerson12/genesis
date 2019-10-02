@@ -1,4 +1,7 @@
-
+* {
+    margin: 0;
+    padding: 0;
+}
 
 h1 {
     color: #9D9A9A;
@@ -6,6 +9,7 @@ h1 {
 }
 
 .logo {
+    margin-top: 15px;
     float: left;
     font-family: "Arial", Arial, sans-serif;
 }

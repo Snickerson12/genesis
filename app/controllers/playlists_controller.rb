@@ -1,4 +1,5 @@
 class PlaylistsController < ApplicationController
+    before_action :require_logged_in
     before_action :find_playlist, only: [:show, :edit, :update, :destroy, :share, :share_playlist]
 
     def index
