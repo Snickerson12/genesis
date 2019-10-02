@@ -3,7 +3,6 @@
 <div class="usercontainer">
   <div class="userplaylists">
     <h2>Playlists Created by <%= @user.name %></h3>
-
     <ul>
       <% @playlists.each do |playlist| %>
           <% if playlist.creator_id == @user.id %>
@@ -12,8 +11,6 @@
       <% end %>
     </ul>
   </div>
-
-
   <div class="sharedplaylists">
   <h2>Playlists shared with <%= @user.name %></h3>
     <ul>

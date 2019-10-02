@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   </head>
 
   <header>
@@ -16,8 +17,8 @@
           <div class="logo"><%= link_to "Genesis Tracklister", root_path %></div>
           <i class="fas fa-atom fa-2x fa-spin"></i>
           <% if current_user %>
-          <li><%= link_to current_user.name, current_user %></li> 
           <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
+          <li><%= link_to current_user.name, current_user %></li> 
         <% end %>
       </ul>
     </nav>
