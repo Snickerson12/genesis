@@ -1,7 +1,12 @@
-<%= form_for :user, url: '/login' do |f| %>
-  Username: <%= f.text_field :name %>
-  Password: <%= f.password_field :password %>
-  <%= f.submit "Submit" %>
-<% end %>
 
-<%= button_to "create new user", new_user_path, method: 'get' %>
+<div class="container">
+  <div class="login">
+    <h1>Login to Genesis</h1>
+    <%= form_for :user, url: '/login' do |f| %>
+      <div> Username: <%= f.text_field :name, :class => 'username' %> 
+      <div> Password: <%= f.password_field :password, :class => 'password' %> </div>
+      <div class="buttonp"> <%= f.submit "Log-in", :class => 'button1' %>
+    <% end %>
+      <%= button_to "Create New User", new_user_path, method: 'get', :class => 'button2'%> </div>
+  </div>
+</div>

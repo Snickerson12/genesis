@@ -1,22 +1,28 @@
-<h1><%= @user.name %></h1>
+<h1>User Profile for: <%= @user.name %></h1>
 
-<h3>Playlists Created by <%= @user.name %></h3>
+<div class="usercontainer">
+  <div class="userplaylists">
+    <h2>Playlists Created by <%= @user.name %></h3>
 
-<ul>
-  <% @playlists.each do |playlist| %>
-      <% if playlist.creator_id == @user.id %>
-        <li><%= link_to playlist.name, playlist %></li>
+    <ul>
+      <% @playlists.each do |playlist| %>
+          <% if playlist.creator_id == @user.id %>
+            <li><%= link_to playlist.name, playlist %></li>
+          <% end %>
       <% end %>
-  <% end %>
-</ul>
+    </ul>
+  </div>
 
-<h3>Playlists shared with <%= @user.name %></h3>
 
-<ul>
-  <% @userplaylists.each do |userplaylist| %>
-      <% if userplaylist.listener_id == @user.id%>
-        <% playlist = Playlist.find_by(id: userplaylist.playlist_id) %>
-        <li><%= link_to playlist.name, playlist %></li>
+  <div class="sharedplaylists">
+  <h2>Playlists shared with <%= @user.name %></h3>
+    <ul>
+      <% @userplaylists.each do |userplaylist| %>
+          <% if userplaylist.listener_id == @user.id%>
+            <% playlist = Playlist.find_by(id: userplaylist.playlist_id) %>
+            <li><%= link_to playlist.name, playlist %></li>
+          <% end %>
       <% end %>
-  <% end %>
-</ul>
+    </ul>
+  </div>
+</div>

@@ -6,6 +6,13 @@
 h1 {
     color: #9D9A9A;
     text-align: center;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    font-family: "Arial", Arial, sans-serif;
+}
+
+li {
+    list-style-type: none;
 }
 
 .logo {
@@ -23,9 +30,14 @@ h1 {
     text-decoration: none;
 }
 
+.fas2 {
+    color: white;
+}
+
 .navbar li a {
     display: block;
     text-decoration: none;
+    font-size: 20px;
 }
 
 .navbar {
@@ -44,6 +56,7 @@ h1 {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-family: "Arial", Arial, sans-serif;
 }
 
 .navbar li a:visited {
@@ -60,6 +73,7 @@ h1 {
     align-items: center;
     justify-content: space-around;
   }
+
 
   /* Place the navbar at the bottom of the page, and make it stick */
 .navbar-b {
@@ -81,7 +95,8 @@ h1 {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
+    font-family: "Arial", Arial, sans-serif;
 }
 
 .navbar-b li a:visited {
@@ -99,14 +114,140 @@ h1 {
     color: white;
 }
 
- .icon {
-  float: left;
-  color: white;
-  padding: 0;
+.fas {
+    color: white;
+    float: left;
+    padding: 14px 16px;
 }
-.icon > li {
-  padding: 14px 16px;
-  position: relative;
-  white-space: nowrap;
-  color: white;
+
+.fas li a:hover {
+    color: #111;
+}
+
+.user {
+    font-family: "Arial", Arial, sans-serif;
+    font-size: 1.5em;
+    color: white;
+}
+
+/*log in page */
+.container {
+    margin: 50px auto;
+    width: 640px;
+  }
+
+  .login {
+      color: rgb(107, 106, 106);
+      font-family: "Arial", Arial, sans-serif;
+      text-align: center;
+  }
+
+  .login h1 {
+    margin: -20px -20px 21px;
+    line-height: 40px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background: #38C4EF;
+    border-bottom: 1px solid #cfcfcf;
+    border-radius: 3px 3px 0 0;
+    background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
+    background-image: -moz-linear-gradient(top, whiteffd, #eef2f5);
+    background-image: -o-linear-gradient(top, whiteffd, #eef2f5);
+    background-image: linear-gradient(to bottom, whiteffd, #eef2f5);
+    -webkit-box-shadow: 0 1px whitesmoke;
+    box-shadow: 0 1px whitesmoke;
+  }
+   
+  .login p {
+    margin: 20px 0 0;
+  }
+   
+  .login p:first-child {
+    margin-top: 0;
+  }
+   
+  .login input[type=text], .login input[type=password] {
+    width: 278px;
+  }
+
+.username {
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+}
+
+.password {
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+}
+
+.buttonp {
+    display: flex;
+    width: 600px;
+    justify-content: center;
+}
+
+.button1 {
+    background-color:#A6F484;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+}
+
+.button1:hover {
+    background-color: green;
+    color: white;
+}
+
+.button2 {
+    background-color:#A6F484;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+}
+
+.button2:hover {
+    background-color: green;
+    color: white;
+}
+
+/* User Show Page */
+
+.usercontainer{
+    display: flex;
+    justify-content: center;
+    font-family: "Arial", Arial, sans-serif;
+}
+
+.usercontainer li {
+    font-size: 2em;
+}
+
+.usercontainer h2 {
+    font-size: 30px;
+}
+
+.userplaylists {
+    width: 400px;
+    border: 8px solid gray;
+    padding: 50px;
+    margin: 20px;
+    text-align: center;
+}
+
+.sharedplaylists {
+    width: 400px;
+    border: 8px solid gray;
+    padding: 50px;
+    margin: 20px;
+    text-align: center;
 }
