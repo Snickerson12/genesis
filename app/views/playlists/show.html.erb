@@ -7,17 +7,21 @@
     <p><%= song.title %></p>
     <% end %>
 </ul>
-
+<br>
+<h2>Likes: <%= @playlist.likes %></h2>
+<br>
+<%= button_to "like" , like_path(@playlist)%>
+<br>
 <h2>This playlist is shared with:</h2>
-
+<br>
 <ul>
   <% @playlist.listeners.each do |listener| %>
     <li><%= link_to listener.name, listener %></li>
   <% end %>
 </ul>
-
+<br>
 <p>This playlist is private: <%= @playlist.private %></p>
-
+<br>
 <% if @playlist.private == true || @playlist.creator_id == session[:user_id] %>
   <%= button_to "edit playlist", edit_playlist_path(@playlist), method: "get" %> <%= button_to "share playlist", share_path(@playlist), method: "get" %>
 <% end %>

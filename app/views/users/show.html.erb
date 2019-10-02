@@ -6,7 +6,7 @@
   <% @playlists.each do |playlist| %>
       <% if playlist.creator_id == @user.id %>
         <li><%= link_to playlist.name, playlist %></li>
-      <% end %>
+    <% end %>
   <% end %>
 </ul>
 
