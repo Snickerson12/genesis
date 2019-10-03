@@ -429,6 +429,11 @@ li {
     border-radius: 25px;
 }
 
+.playlist_cont_text {
+    color: grey;
+    margin-bottom: 5px;
+}
+
 .createplaylist {
     display: flex;
     justify-content: center;
@@ -508,3 +513,64 @@ li {
 .filler {
     height: 60px;
 }
+
+/* playlist share page */
+
+.shareparent {
+    display: flex;
+    justify-content: center;
+}
+
+.shareform {
+    width: 500px;
+    border: 3px solid grey;
+    border-radius: 25px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sharetext {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    color: gray;
+}
+
+.check_box_parent {
+    display: flex;
+    justify-content: left;
+    margin-left: 125px;
+}
+
+.share_check_box_label {
+    color: grey;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.share_check_box {
+    color: grey;
+}
+
+.share_submit {
+    display: flex;
+    justify-content: center;
+    background-color:#A6F484;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+}
+.share_submit:hover {
+    background-color: green;
+    color: white;
+}
+
+.sbutton_parent {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
