@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_02_151737) do
+ActiveRecord::Schema.define(version: 2019_10_03_160840) do
 
   create_table "playlists", force: :cascade do |t|
     t.string "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_151737) do
     t.string "album"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "spotify_id"
   end
 
   create_table "user_playlists", force: :cascade do |t|

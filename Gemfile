@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 #icons
 gem 'ionicons-rails'
+gem 'rspotify'
+
 
 
 # Use Active Storage variant
