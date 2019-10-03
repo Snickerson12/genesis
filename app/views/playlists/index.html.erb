@@ -1,4 +1,13 @@
 <h1>Playlist Index</h1>
+
+<div class="creationparent">
+  <div>
+    <%= button_to "Create New Playlist", new_playlist_path, method: "get", :class => "createplaylist" %>
+  </div>
+</div>
+
+
+
 <div class="indexparent">
   <div class = "playlistcontainer">
     <ul>
@@ -11,8 +20,4 @@
   </div>
 </div>
 
-<div class="creationparent">
-  <div>
-    <%= button_to "Create New Playlist", new_playlist_path, method: "get", :class => "createplaylist" %>
-  </div>
-</div>
+

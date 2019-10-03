@@ -4,7 +4,7 @@
     <%= form_for @user, controller: 'users', action: 'create' do |f| %>
       <div>
         <div><%= f.label "Username:" %>
-        <%= f.text_field :name, :class => "newuser" %> </div>
+        <%= f.text_field :name, :class => "nuser" %> </div>
 
         <div> <%= f.label "Password:" %>
         <%= f.password_field :password, :class => "newpassword" %> </div>
@@ -12,8 +12,10 @@
         <div> <%= f.label "Confirm Password:" %>
         <%= f.password_field :password_confirmation, :class => "passwordconfirmation" %> </div>
       </div>
-      <div> <%= f.submit "create", :class => "createbutton" %> </div>
+      <div class = "userbuttonparent"> <%= f.submit "Create", :class => "createbutton" %> 
     <% end %>
+      <%= link_to "Return", login_path, :class => "backbutton" %>
+      </div>
   </div>
 </div>
 

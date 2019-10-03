@@ -34,10 +34,26 @@ li {
     color: white;
 }
 
+/* sign in and create account home page buttons */
+
 .signupcont {
     display: flex;
     justify-content: center;
 }
+
+.homebuttons {
+    display: flex;
+    width: 600px;
+    justify-content: center;
+}
+
+.signupcont li {
+    display: flex;
+    width: 600px;
+    justify-content: center;
+    text-align: center;
+}
+
 .newuser {
     background-color:#A6F484;
     text-decoration: none;
@@ -47,13 +63,30 @@ li {
     padding: 5px 5px;
     border-radius: 4px;
     width: 195px;
-    margin: 10px;
 }
 
 .newuser:hover {
     background-color: green;
     color: white;
 }
+
+.usersignin {
+    background-color:#A6F484;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+}
+
+.usersignin:hover {
+    background-color: green;
+    color: white;
+}
+
+/* top and bottom navbarss */
 
 .navbar li a {
     display: block;
@@ -94,7 +127,6 @@ li {
     align-items: center;
     justify-content: space-around;
   }
-
 
 
   /* Place the navbar at the bottom of the page, and make it stick */
@@ -198,12 +230,15 @@ li {
     width: 100px;
     height: 30px;
     margin: 5px;
+    font-size: 20px;
+    color: grey;
 }
 
 .password {
     width: 100px;
     height: 30px;
     margin: 5px;
+    font-size: 20px;
 }
 
 .buttonp {
@@ -249,6 +284,25 @@ li {
     width: 640px;
 }
 
+.createuser h1 {
+    margin: -20px -20px 21px;
+    line-height: 40px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background: #38C4EF;
+    border-bottom: 1px solid #cfcfcf;
+    border-radius: 3px 3px 0 0;
+    background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
+    background-image: -moz-linear-gradient(top, whiteffd, #eef2f5);
+    background-image: -o-linear-gradient(top, whiteffd, #eef2f5);
+    background-image: linear-gradient(to bottom, whiteffd, #eef2f5);
+    -webkit-box-shadow: 0 1px whitesmoke;
+    box-shadow: 0 1px whitesmoke;
+  }
+
+
 .createuser {
     color: rgb(107, 106, 106);
     font-family: 'Roboto', sans-serif;
@@ -259,22 +313,31 @@ li {
     width: 278px;
 }
 
-.newuser {
+.nuser {
     width: 100px;
     height: 30px;
     margin: 5px;
+    font-size: 20px;
+    color: grey;
 }
 
 .newpassword {
     width: 100px;
     height: 30px;
     margin: 5px;
+    font-size: 20px;
 }
 
 .passwordconfirmation {
     width: 100px;
     height: 30px;
     margin: 5px;
+}
+
+.userbuttonparent {
+    display: flex;
+    width: 600px;
+    justify-content: center;
 }
 
 .createbutton {
@@ -287,10 +350,27 @@ li {
     margin: 10px;
 }
 
-.button1:hover {
+.createbutton:hover {
     background-color: green;
     color: white;
 }
+
+.backbutton {
+    background-color:#A6F484;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.backbutton:hover {
+    background-color: green;
+    color: white;
+}
+
 
 
 /* User Show Page */
@@ -299,6 +379,7 @@ li {
     display: flex;
     justify-content: center;
     font-family: 'Roboto', sans-serif;
+    width: 80%;
 }
 
 .usercontainer li {
@@ -313,7 +394,7 @@ li {
 }
 
 .userplaylists {
-    width: 400px;
+    width: 60%;
     border: 3px solid gray;
     padding: 50px;
     margin: 20px;
@@ -322,7 +403,7 @@ li {
 }
 
 .sharedplaylists {
-    width: 400px;
+    width: 60%;
     border: 3px solid gray;
     padding: 50px;
     margin: 20px;
@@ -368,6 +449,7 @@ li {
 .creationparent {
     display: flex;
     justify-content: center;
+    margin: 20px;
 }
 
 /* playlist show page */
