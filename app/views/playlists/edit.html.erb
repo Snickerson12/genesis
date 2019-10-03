@@ -1,1 +1,34 @@
 <%= render 'form', model: @playlist %>
+
+<br>
+<p><form></p>
+  Search Spotify:<br><br>
+  <input type="text" name="search" placeholder="Search">
+  <br>
+  <input type="submit" value="Search">
+<p></form></p> 
+
+<% if params[:search] && params[:search] != "" %>
+  <% results = RSpotify::Track.search(params[:search])[0..9]%>
+<% end %>
+
+<% if results && results != []%>
+<%= form_with model: @playlist do |f| %>
+
+
+
+  <%= f.fields_for :songs do |song| %>
+  <%= song.collection_check_boxes :song_ids, results, :id, :name, include_hidden: false do |b|  %>
+    <%= b.label(class: "check_box") do %>
+      <%= b.check_box(class: "check_box") %>
+      <%= b.object.name %> - <%= b.object.artists.first.name %> [<%= b.object.album.name %>]
+      </br>
+      <% end %>
+  <% end %>
+  <% end %>
+
+
+
+  <p><%= f.submit %></p>
+  <% end %>
+<% end %> 
