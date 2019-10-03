@@ -1,8 +1,24 @@
-<h2>Share Playlist</h2>
+<h1>Share Playlist</h1>
 
 <%= form_with model: @playlist, url: share_playlist_path, method: "patch" do |f| %>
-<p>Sharing the playlist "<%= @playlist.name %>" with:</p>
-<p>
-<%= f.collection_check_boxes :listener_ids, @users, :id, :name, include_hidden: false %></p>
-<%= f.submit "Share" %>
-<% end %>
+
+        <div class="sbutton_parent">
+        <%= f.submit "Share", :class => "share_submit" %>
+        </div>
+
+<div class="shareparent">
+    <div class="shareform">
+        <div class="sharetext"> Select users to share "<%= @playlist.name %>" with:</div>
+            <%= f.collection_check_boxes :listener_ids, @users, :id, :name, include_hidden: false do |b| %>
+                <div class="check_box_parent">
+                <%= b.label(class: "share_check_box_label") do %>
+                <%= b.check_box(class: "share_check_box") %>
+                <%= b.object.name %> 
+                </div>
+                <% end %>
+            <% end %>
+    </div>
+</div>
+
+
+        <% end %>
