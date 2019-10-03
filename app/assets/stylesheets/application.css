@@ -6,12 +6,19 @@
 h1 {
     color: #9D9A9A;
     text-align: center;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+
+li {
+    list-style-type: none;
 }
 
 .logo {
     margin-top: 15px;
     float: left;
-    font-family: "Arial", Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .logo a {
@@ -23,9 +30,68 @@ h1 {
     text-decoration: none;
 }
 
+.fas2 {
+    color: white;
+}
+
+/* sign in and create account home page buttons */
+
+.signupcont {
+    display: flex;
+    justify-content: center;
+}
+
+.homebuttons {
+    display: flex;
+    width: 600px;
+    justify-content: center;
+}
+
+.signupcont li {
+    display: flex;
+    width: 600px;
+    justify-content: center;
+    text-align: center;
+}
+
+.newuser {
+    background-color:#A6F484;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+}
+
+.newuser:hover {
+    background-color: green;
+    color: white;
+}
+
+.usersignin {
+    background-color:#A6F484;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+}
+
+.usersignin:hover {
+    background-color: green;
+    color: white;
+}
+
+/* top and bottom navbarss */
+
 .navbar li a {
     display: block;
     text-decoration: none;
+    font-size: 20px;
 }
 
 .navbar {
@@ -44,6 +110,7 @@ h1 {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 .navbar li a:visited {
@@ -60,6 +127,7 @@ h1 {
     align-items: center;
     justify-content: space-around;
   }
+
 
   /* Place the navbar at the bottom of the page, and make it stick */
 .navbar-b {
@@ -81,7 +149,8 @@ h1 {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .navbar-b li a:visited {
@@ -99,14 +168,343 @@ h1 {
     color: white;
 }
 
- .icon {
-  float: left;
-  color: white;
-  padding: 0;
+.fas {
+    color: white;
+    float: left;
+    padding: 14px 16px;
 }
-.icon > li {
-  padding: 14px 16px;
-  position: relative;
-  white-space: nowrap;
-  color: white;
+
+.fas li a:hover {
+    color: #111;
+}
+
+.user {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    color: white;
+}
+
+/*log in page */
+.container {
+    margin: 50px auto;
+    width: 640px;
+  }
+
+  .login {
+      color: rgb(107, 106, 106);
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+  }
+
+  .login h1 {
+    margin: -20px -20px 21px;
+    line-height: 40px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background: #38C4EF;
+    border-bottom: 1px solid #cfcfcf;
+    border-radius: 3px 3px 0 0;
+    background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
+    background-image: -moz-linear-gradient(top, whiteffd, #eef2f5);
+    background-image: -o-linear-gradient(top, whiteffd, #eef2f5);
+    background-image: linear-gradient(to bottom, whiteffd, #eef2f5);
+    -webkit-box-shadow: 0 1px whitesmoke;
+    box-shadow: 0 1px whitesmoke;
+  }
+   
+  .login p {
+    margin: 20px 0 0;
+  }
+   
+  .login p:first-child {
+    margin-top: 0;
+  }
+   
+  .login input[type=text], .login input[type=password] {
+    width: 278px;
+  }
+
+.username {
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+    font-size: 20px;
+    color: grey;
+}
+
+.password {
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+    font-size: 20px;
+}
+
+.buttonp {
+    display: flex;
+    width: 600px;
+    justify-content: center;
+}
+
+.button1 {
+    background-color:#A6F484;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+}
+
+.button1:hover {
+    background-color: green;
+    color: white;
+}
+
+.button2 {
+    background-color:#A6F484;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+}
+
+.button2:hover {
+    background-color: green;
+    color: white;
+}
+
+/* Create New User Page */
+
+.usercontainer {
+    margin: 50px auto;
+    width: 640px;
+}
+
+.createuser h1 {
+    margin: -20px -20px 21px;
+    line-height: 40px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background: #38C4EF;
+    border-bottom: 1px solid #cfcfcf;
+    border-radius: 3px 3px 0 0;
+    background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
+    background-image: -moz-linear-gradient(top, whiteffd, #eef2f5);
+    background-image: -o-linear-gradient(top, whiteffd, #eef2f5);
+    background-image: linear-gradient(to bottom, whiteffd, #eef2f5);
+    -webkit-box-shadow: 0 1px whitesmoke;
+    box-shadow: 0 1px whitesmoke;
+  }
+
+
+.createuser {
+    color: rgb(107, 106, 106);
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.createuser input[type=text], .createuser input[type=password] {
+    width: 278px;
+}
+
+.nuser {
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+    font-size: 20px;
+    color: grey;
+}
+
+.newpassword {
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+    font-size: 20px;
+}
+
+.passwordconfirmation {
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+}
+
+.userbuttonparent {
+    display: flex;
+    width: 600px;
+    justify-content: center;
+}
+
+.createbutton {
+    background-color:#A6F484;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+}
+
+.createbutton:hover {
+    background-color: green;
+    color: white;
+}
+
+.backbutton {
+    background-color:#A6F484;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.backbutton:hover {
+    background-color: green;
+    color: white;
+}
+
+
+
+/* User Show Page */
+
+.usercontainer{
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    width: 80%;
+}
+
+.usercontainer li {
+    font-size: 1.5em;
+    text-align: left;
+}
+
+.usercontainer h2 {
+    font-size: 30px;
+    color: grey;
+    margin-bottom: 15px;
+}
+
+.userplaylists {
+    width: 60%;
+    border: 3px solid gray;
+    padding: 50px;
+    margin: 20px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.sharedplaylists {
+    width: 60%;
+    border: 3px solid gray;
+    padding: 50px;
+    margin: 20px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+/* Playlist index page */
+
+.indexparent {
+    display: flex;
+    justify-content: center;
+}
+
+.playlistcontainer{
+    display: flex;
+    justify-content: center;
+    width: 800px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    border: 3px solid grey;
+    background: white;
+    border-radius: 25px;
+}
+
+.createplaylist {
+    display: flex;
+    justify-content: center;
+    background-color:#A6F484;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+}
+
+.createplaylist:hover {
+    background-color: green;
+    color: white;
+}
+
+.creationparent {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+/* playlist show page */
+
+.pbuttonparent {
+    display: flex;
+    justify-content: center;
+}
+
+.deleteplaylist {
+    display: flex;
+    justify-content: center;
+    background-color:#A6F484;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+}
+.deleteplaylist:hover {
+    background-color: green;
+    color: white;
+}
+.editplaylist {
+    display: flex;
+    justify-content: center;
+    background-color:#A6F484;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+}
+.editplaylist:hover {
+    background-color: green;
+    color: white;
+}
+.shareplaylist {
+    display: flex;
+    justify-content: center;
+    background-color:#A6F484;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+}
+.shareplaylist:hover {
+    background-color: green;
+    color: white;
+}
+
+.filler {
+    height: 60px;
 }

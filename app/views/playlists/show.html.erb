@@ -1,4 +1,15 @@
-<h1>Playlist Name:<%= @playlist.name %></h1>
+<h1>Playlist Name: <%= @playlist.name %></h1>
+
+<div class="pbuttonparent">
+  <% if @playlist.private == true || @playlist.creator_id == session[:user_id] %>
+    <%= button_to "Edit Playlist", edit_playlist_path(@playlist), method: "get", :class => "editplaylist"  %> 
+    <%= button_to "Share Playlist", share_path(@playlist), method: "get", :class => "shareplaylist" %>
+  <% end %>
+
+  <%= button_to "Delete Playlist", @playlist, method: :delete, data: { confirm: "Really?" }, :class => "deleteplaylist" %>
+
+</div>
+
 <h2>Created by: <%= @playlist.creator.name %></h2>
 
 <h3>Songs:</h3>
@@ -22,9 +33,5 @@
 </ul>
 <br>
 <p>This playlist is private: <%= @playlist.private %></p>
-<br>
-<% if @playlist.private == true || @playlist.creator_id == session[:user_id] %>
-  <%= button_to "edit playlist", edit_playlist_path(@playlist), method: "get" %> <%= button_to "share playlist", share_path(@playlist), method: "get" %>
-<% end %>
-<p><%= link_to "back", playlists_path %></p>
-<p><%= button_to "Delete Playlist", @playlist, method: :delete, data: { confirm: "Really?" } %></p>
+
+<div class="filler"></div>
