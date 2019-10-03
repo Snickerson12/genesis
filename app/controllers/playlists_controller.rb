@@ -1,5 +1,4 @@
 require 'rspotify'
-require 'pry'
 
 def client_id
     client_id = File.read("./id.env")
@@ -10,19 +9,6 @@ def client_secret
 end
 
 RSpotify::authenticate(client_id, client_secret)
-# @spotify_user = RSpotify::User.new
-# @spotify_user = RSpotify::User.find('12133914006')
-@spotify_user = RSpotify::User.new({'credentials' => ({
-  'id' => '12133914006',
-  'credentials' => {
-    'token' => 'BQAsJhXX8UZl0LsiuhLZbs533x_nzJSesnI1m1AZDjevt78lu6ofkmqAT5oH-EK-jSPd0lF1Le1D9_ckokReq-J4pPeGJDSmwdVV-siCK6W2sPh7mCHmtB0g5hT5A17R1nRqR8hCvjnnC8AyGCQDt86JVIJ7R9Lw6GoceeDxX47fz0Fjq-4V5Vs1ULxU',
-    'refresh_token' => 'AQCcRXOfcrzYsrQv2If51NlH_VhAw2kGomsMSBdwHsJPCwyZT23I0mSY79M5LzqUpJf-JlDKPn8fg-tMBn9vuBQmp_-tNk_-TMuli4xbjThF0hv3VsosDz6HxKtDz2Fb64Cp_Q'
-  }
-})})
-
-p @spotify_user
-
-#@spotify_user.create_playlist!('New Playlist')
 
 
 class PlaylistsController < ApplicationController
@@ -49,7 +35,6 @@ class PlaylistsController < ApplicationController
     end
 
     def create
-
         @playlist = Playlist.new(playlist_params)
         @playlist.creator_id = session[:user_id]
         if @playlist.valid?
@@ -67,8 +52,6 @@ class PlaylistsController < ApplicationController
 
     def update
       @playlist.assign_attributes(name: params[:playlist][:name], private: params[:playlist][:private])
-      p params
-      puts "*********************************************************************"
       if params[:playlist][:songs]
         params[:playlist][:songs][:spotify_ids].each do |id|
           title = RSpotify::Track.find(id).name
@@ -79,6 +62,12 @@ class PlaylistsController < ApplicationController
         end
       end
       if @playlist.valid?
+        @playlist.save
+        @playlist.songs.clear
+        params[:playlist][:song_ids].each do |i|
+          song = Song.all.find_by(id: i)
+          @playlist.songs << song
+        end
         @playlist.save
         redirect_to playlist_path(@playlist)
       else

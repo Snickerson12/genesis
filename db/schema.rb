@@ -12,12 +12,17 @@
 
 ActiveRecord::Schema.define(version: 2019_10_03_160840) do
 
+  create_table "playlist_stages", force: :cascade do |t|
+    t.string "song_ids"
+  end
+
   create_table "playlists", force: :cascade do |t|
     t.string "name"
     t.integer "creator_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "private", default: true
+    t.string "song_ids"
     t.integer "likes", default: 0
   end
 
