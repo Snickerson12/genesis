@@ -2,8 +2,8 @@
 
 <div class="pbuttonparent">
   <% if @playlist.private == true || @playlist.creator_id == session[:user_id] %>
-    <%= button_to "edit playlist", edit_playlist_path(@playlist), method: "get", :class => "editplaylist"  %> 
-    <%= button_to "share playlist", share_path(@playlist), method: "get", :class => "shareplaylist" %>
+    <%= button_to "Edit Playlist", edit_playlist_path(@playlist), method: "get", :class => "editplaylist"  %> 
+    <%= button_to "Share Playlist", share_path(@playlist), method: "get", :class => "shareplaylist" %>
   <% end %>
 
   <%= button_to "Delete Playlist", @playlist, method: :delete, data: { confirm: "Really?" }, :class => "deleteplaylist" %>
@@ -29,4 +29,4 @@
 
 <p>This playlist is private: <%= @playlist.private %></p>
 
-
+<div class="filler"></div>

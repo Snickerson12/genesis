@@ -12,7 +12,7 @@
     </ul>
   </div>
   <div class="sharedplaylists">
-  <h2>Playlists shared with <%= @user.name %></h3>
+  <h2>Playlists Shared with <%= @user.name %></h3>
     <ul>
       <% @userplaylists.each do |userplaylist| %>
           <% if userplaylist.listener_id == @user.id%>
