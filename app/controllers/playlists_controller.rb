@@ -66,15 +66,19 @@ class PlaylistsController < ApplicationController
     end
 
     def update
-      @playlist.assign_attributes(playlist_params)
-
-      if @playlist.valid?
-        @playlist.save
-        @playlist.songs.clear
-        params[:playlist][:song_ids].each do |i|
-          song = Song.all.find_by(id: i)
+      @playlist.assign_attributes(name: params[:playlist][:name], private: params[:playlist][:private])
+      p params
+      puts "*********************************************************************"
+      if params[:playlist][:songs]
+        params[:playlist][:songs][:spotify_ids].each do |id|
+          title = RSpotify::Track.find(id).name
+          artist = RSpotify::Track.find(id).artists.first.name
+          album = RSpotify::Track.find(id).album.name
+          song = Song.create(title: title, artist: artist, album: album, spotify_id: id)
           @playlist.songs << song
         end
+      end
+      if @playlist.valid?
         @playlist.save
         redirect_to playlist_path(@playlist)
       else
@@ -113,7 +117,7 @@ class PlaylistsController < ApplicationController
     private
 
     def playlist_params
-        params.require(:playlist).permit(:name, :private, :creator_id, :songs => [:song_ids => []])
+        params.require(:playlist).permit(:name, :private, :creator_id, :songs => [:spotify_ids => []])
     end
 
     def find_playlist
