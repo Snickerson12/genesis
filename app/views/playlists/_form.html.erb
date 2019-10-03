@@ -4,39 +4,13 @@
   <% end %>
 <% end %>
 
-<p><form></p>
-  Search Spotify:<br><br>
-  <input type="text" name="search" placeholder="Search">
-  <br>
-  <input type="submit" value="Search">
-<p></form></p> 
-
-<% if params[:search] && params[:search] != "" %>
-  <% results = RSpotify::Track.search(params[:search])[0..9]%>
-<% end %>
-
-<% if results && results != []%>
-<%= form_with model: @playlist do |f| %>
-  <%= f.label "name" %>
-  <%= f.text_field :name %><br>
-  <%= f.hidden_field(:creator_id) %>
-  <%= f.label 'Private?' %>
-  <%= f.check_box :private %><br>
-
-
-
-  <%= f.fields_for :songs do |song| %>
-  <%= song.collection_check_boxes :song_ids, results, :id, :name, include_hidden: false do |b|  %>
-    <%= b.label(class: "check_box") do %>
-      <%= b.check_box(class: "check_box") %>
-      <%= b.object.name %> - <%= b.object.artists.first.name %> [<%= b.object.album.name %>]
-      </br>
-      <% end %>
+  <%= form_with model: @playlist do |f| %>
+      <%= f.label "name" %>
+      <%= f.text_field :name %><br>
+      <%= f.hidden_field(:creator_id) %>
+      <%= f.label 'Private?' %>
+      <%= f.check_box :private %><br>
+      <%= f.label "songs:" %><br>
+      <%= f.collection_check_boxes(:song_ids, @songs, :id, :title, include_hidden: false)  %>
+      <p><%= f.submit %></p>
   <% end %>
-  <% end %>
-
-
-
-  <p><%= f.submit %></p>
-  <% end %>
-<% end %>

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   delete "logout", to: "sessions#destroy", as: "logout"
   get '/share/:id' => 'playlists#share', as: "share"
   patch '/share/:id' => 'playlists#share_playlist', as: "share_playlist"
+  post '/playlists/:id/like', to: 'playlists#like', as: 'like'
+
 
 
   resources :playlists

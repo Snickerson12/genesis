@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App</title>
+    <title>Genesis</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,16 +9,32 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <% if logged_in? %>
-      <%= form_with url: logout_path, method: "delete" do |f| %>
-        <%= f.submit "Log out #{current_user.name}" %>
-      <% end %>
-    <% else %>
-      <%= link_to "sign in", login_path %>
-    <% end %>
+  <header>
+    <nav>
+      <ul class="navbar">
+          <p class="logo"><%= link_to "Genesis Tracklister", root_path %></p>
+        <% if current_user %>
+          <li><%= link_to "Account", current_user %></li> 
+          <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
+
+        <% else %>
+          <li><%= link_to "Log In", login_path %></li>
+          <li><%= link_to "Sign Up", login_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </header>
 
     <%= yield %>
+
+
+  <div class="navbar-b">
+    <li> <%= link_to "View All Playlists", playlists_path, method: "get" %></li>
+      <div class="icon">
+        <li><%= link_to "Home", root_path%></li>
+      </div>
+  </div>
+
 
   </body>
 </html>

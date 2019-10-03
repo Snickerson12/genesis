@@ -1,15 +1,112 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #9D9A9A;
+    text-align: center;
+}
+
+.logo {
+    margin-top: 15px;
+    float: left;
+    font-family: "Arial", Arial, sans-serif;
+}
+
+.logo a {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+.navbar li a {
+    display: block;
+    text-decoration: none;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #38C4EF;
+    height: 100px ;
+}
+
+.navbar li {
+    float: right;
+    display: block;
+    color: #111;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar li a:hover {
+    color: #111;  
+}     
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  /* Place the navbar at the bottom of the page, and make it stick */
+.navbar-b {
+    background-color: #38C4EF;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.navbar-b li a {
+    display: block;
+    text-decoration: none;
+}
+/* Style the links inside the navigation bar */
+.navbar-b li {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar-b li a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar-b li a:hover {
+    color: #111;  
+} 
+  
+/* Add a color to the active/current link */
+.navbar-b.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+ .icon {
+  float: left;
+  color: white;
+  padding: 0;
+}
+.icon > li {
+  padding: 14px 16px;
+  position: relative;
+  white-space: nowrap;
+  color: white;
+}
