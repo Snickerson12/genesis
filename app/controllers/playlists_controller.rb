@@ -1,3 +1,16 @@
+require 'rspotify'
+
+def client_id
+    client_id = File.read("./id.env")
+end
+
+def client_secret
+    client_secret = File.read("./secret.env")
+end
+
+RSpotify::authenticate(client_id, client_secret)
+
+
 class PlaylistsController < ApplicationController
     before_action :require_logged_in
     before_action :find_playlist, only: [:show, :edit, :update, :destroy, :share, :share_playlist, :like]
@@ -22,10 +35,8 @@ class PlaylistsController < ApplicationController
     end
 
     def create
-
         @playlist = Playlist.new(playlist_params)
         @playlist.creator_id = session[:user_id]
-
         if @playlist.valid?
           @playlist.save
           redirect_to playlist_path(@playlist)
@@ -40,8 +51,16 @@ class PlaylistsController < ApplicationController
     end
 
     def update
-      @playlist.assign_attributes(playlist_params)
-
+      @playlist.assign_attributes(name: params[:playlist][:name], private: params[:playlist][:private])
+      if params[:playlist][:songs]
+        params[:playlist][:songs][:spotify_ids].each do |id|
+          title = RSpotify::Track.find(id).name
+          artist = RSpotify::Track.find(id).artists.first.name
+          album = RSpotify::Track.find(id).album.name
+          song = Song.create(title: title, artist: artist, album: album, spotify_id: id)
+          @playlist.songs << song
+        end
+      end
       if @playlist.valid?
         @playlist.save
         @playlist.songs.clear
@@ -87,13 +106,12 @@ class PlaylistsController < ApplicationController
     private
 
     def playlist_params
-        params.require(:playlist).permit(:name, :private, :creator_id, :song_ids => [])
+        params.require(:playlist).permit(:name, :private, :creator_id, :songs => [:spotify_ids => []])
     end
 
     def find_playlist
       @playlist = Playlist.find(params[:id])
     end
-
 
 
 end

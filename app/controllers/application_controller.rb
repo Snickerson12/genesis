@@ -1,3 +1,6 @@
+
+RSpotify::authenticate("b176f09d23654c8faaa79878dce5626f", "be7067b38c804e1fa8a0554bf79f59c9")
+
 class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
 
@@ -17,7 +20,7 @@ class ApplicationController < ActionController::Base
   def require_logged_in
     return redirect_to(controller: 'sessions', action: 'new') unless logged_in?
   end
-  
+
   def hello
     redirect_to controller: 'sessions', action: 'new' unless session[:name]
   end

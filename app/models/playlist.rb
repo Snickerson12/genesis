@@ -4,5 +4,5 @@ class Playlist < ApplicationRecord
   belongs_to :creator, class_name: 'User'
   has_many :song_playlists
   has_many :songs, through: :song_playlists
-  validates :name, uniqueness: :true
+  validates :name, presence: :true
 end
