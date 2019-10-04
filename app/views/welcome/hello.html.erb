@@ -13,9 +13,22 @@
 <% p1 = @playlist %>
 <% p2 = @playlist_two %>
 
-  <div class="flex-container">
-    <%= render "playlists/playlist_container", playlist: @playlist, class: 'flex-item'%>
-    <%= render 'playlists/playlist_container', playlist: @plyalist_two, class: 'flex-item' %>
+  <div class="hello-flex-container">
+    <div class="flex-item">
+      <% @playlist = @playlist.random_playlist -%>
+      <label>Random playlist:</label>
+      <%= render "playlists/playlist_container", playlist: @playlist, class: 'flex-item'%>
+    </div>
+    <div class="flex-item">
+      <% @playlist = @playlist.most_liked -%>
+      <label>Playlist with the most likes: (<%= @playlist.likes %> likes)</label>
+      <%= render 'playlists/playlist_container', playlist: @plyalist, class: 'flex-item' %>
+    </div>
+    <div class="flex-item">
+      <% @playlist = @playlist.most_songs -%>
+      <label>Playlist with the most songs: (<%= @playlist.songs.count %> songs)</label>
+      <%= render 'playlists/playlist_container', playlist: @plyalist %>
+    </div>
 
   </div>
 
