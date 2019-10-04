@@ -10,16 +10,15 @@
 
 </div>
 
-<h2>Created by: <%= @playlist.creator.name %></h2>
-
-<h3>Songs:</h3>
-<ul>
-  <% @playlist.songs.each do |song| %>
-    <p><%= song.title %></p>
-    <iframe src="https://open.spotify.com/embed/track/<%= song.spotify_id %>" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-    <% end %>
-</ul>
+<div class="playlist-title">
+<h2 align="center">Created by: <%= link_to @playlist.creator.name, user_path(@playlist.creator) %></h2>
+</div>
 <br>
+<div class="playlist-show">
+  <%= render 'show', model: @playlist %>
+</div>
+
+
 <h2>Likes: <%= @playlist.likes %></h2>
 <br>
 <%= button_to "like" , like_path(@playlist)%>

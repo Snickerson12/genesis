@@ -1,6 +1,3 @@
-
-RSpotify::authenticate("b176f09d23654c8faaa79878dce5626f", "be7067b38c804e1fa8a0554bf79f59c9")
-
 class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
 
