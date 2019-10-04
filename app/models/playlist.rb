@@ -1,3 +1,5 @@
+require 'pry'
+
 class Playlist < ApplicationRecord
   has_many :user_playlists
   has_many :listeners, through: :user_playlists, class_name: 'User'

@@ -1,52 +1,28 @@
-
 <h1>Public Playlists </h1>
 
 <div class="signupcont">
   <% if !current_user %>
-    <div class = "homebuttons"> 
+    <div class = "homebuttons">
     <li> <%= link_to "Create an Account", new_user_path, :class => "newuser" %></li>
-    <li> <%= link_to "Sign in", login_path, :class => "usersignin" %></li> 
+    <li> <%= link_to "Sign in", login_path, :class => "usersignin" %></li>
     </div>
   <% end %>
 </div>
 <br>
 
-
-<div class="flex-container">
-<div class="section">
-  <div class="playlist-title">
-  <% @playlist = Playlist.most_liked %>
-  <h2 align="center">Most Liked</h2>
-  <h2 align="center"><%= link_to @playlist.name, @playlist %></h2>
-  </div>
-  <div class="playlist-title">
-  <% @playlist = Playlist.most_songs %>
-  <h2 align="center">Most Songs</h2>
-  <h2 align="center"><%= link_to @playlist.name, @playlist %></h2>
-  </div>
-  <div class="playlist-title">
-  <% @playlist = Playlist.random_playlist %>
-  <h2 align="center">Random</h2>
-  <h2 align="center"><%= link_to @playlist.name, @playlist %></h2>
-  </div>
-  </div>
-</div>
-  <div class="flex-container">
-  <div class="section">
-  <% @playlist = Playlist.most_liked %>
-    <div class="playlist">
-    <%= render 'show', model: @playlist %>
-    </div>
+<div class="welcome-playlist-container">
+    <% @playlist = Playlist.most_liked %>
+      <div class="welcome-hello-header">Most liked <br><br>
+        <%= render './playlists/show', model: @playlist %></div>
     <% @playlist = Playlist.most_songs %>
-    <div class="playlist">
-    <%= render 'show', model: @playlist %>
-    </div>
+      <div class="welcome-hello-header">Most songs<br><br>
+        <%= render './playlists/show', model: @playlist %></div>
     <% @playlist = Playlist.random_playlist %>
-    <div class="playlist">
-    <%= render 'show', model: @playlist %>
-    </div>
-    </div>
+      <div class="welcome-hello-header">Random<br><br>
+        <%= render './playlists/show', model: @playlist %></div>
   </div>
+
+</div>
 
 
 <!--

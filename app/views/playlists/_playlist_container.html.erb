@@ -1,0 +1,40 @@
+<% require 'pry' %>
+
+<div class="playlist-container">
+
+  <div class="playlist-item-head">
+    Playlist Name: <%= @playlist.name %>
+  </div>
+
+
+  <div class="playlist-item-sub-head">
+    Created by: <%= @playlist.creator.name %>
+  </div>
+
+  <% @playlist.songs.each do |song| %>
+    <div class="@playlist-item-embedded-track">
+      <!-- <p><%= song.title %></p> -->
+      <iframe src="https://open.spotify.com/embed/track/<%= song.spotify_id %>" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+  <% end %>
+
+  <% if !@playlist.listeners.empty? %>
+      <div class="@playlist-item-sub-head">
+        Listeners:
+        <% @playlist.listeners.each do |listener| %>
+            <%= button_to listener.name, listener, method: 'get', class: '@playlist-item-button' %>
+        <% end %>
+      </div>
+  <% end %>
+
+  <div class="@playlist-item-sub-head">
+    <%= @playlist.public_display %>
+  </div>
+
+  <div class="@playlist-item-head">
+    Likes: <%= @playlist.likes %><%= button_to "like" , like_path(@playlist), class: '@playlist-item-like-button'%>
+  </div>
+
+</div>
+
+<div class="filler"></div>
