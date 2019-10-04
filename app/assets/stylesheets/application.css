@@ -315,6 +315,13 @@ li {
     color: white;
 }
 
+.login_error_message {
+    text-align: center;
+    color: #a10623; 
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
 /* Create New User Page */
 
 .usercontainer {
@@ -370,6 +377,7 @@ li {
     width: 100px;
     height: 30px;
     margin: 5px;
+    font-size: 20px;
 }
 
 .userbuttonparent {
@@ -409,7 +417,12 @@ li {
     color: white;
 }
 
-
+.creation_error_message {
+    text-align: center;
+    color: #a10623; 
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
 
 /* User Show Page */
 
@@ -449,6 +462,29 @@ li {
     border-radius: 25px;
 }
 
+.create_playlist_showpage_parent {
+    display: flex;
+    justify-content: center;
+}
+
+.create_playlist_showpage_button {
+    display: flex;
+    justify-content: center;
+    background-color:#A6F484;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+}
+
+.create_playlist_showpage_button:hover {
+    background-color: green;
+    color: white;
+}
+
 /* Playlist index page */
 
 .indexparent {
@@ -467,6 +503,17 @@ li {
     border-radius: 25px;
 }
 
+.playlist_cont_text {
+    color: grey;
+    margin-bottom: 5px;
+}
+
+.creationparent {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
 .createplaylist {
     display: flex;
     justify-content: center;
@@ -482,12 +529,6 @@ li {
 .createplaylist:hover {
     background-color: green;
     color: white;
-}
-
-.creationparent {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
 }
 
 /* playlist show page */
@@ -544,5 +585,275 @@ li {
 }
 
 .filler {
-    height: 60px;
+    height: 80px;
+}
+
+/* playlist share page */
+
+.shareparent {
+    display: flex;
+    justify-content: center;
+}
+
+.shareform {
+    width: 500px;
+    border: 3px solid grey;
+    border-radius: 25px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sharetext {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    color: gray;
+}
+
+.check_box_parent {
+    display: flex;
+    justify-content: left;
+    margin-left: 125px;
+}
+
+.share_check_box_label {
+    color: grey;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.share_check_box {
+    color: grey;
+}
+
+.share_submit {
+    display: flex;
+    justify-content: center;
+    background-color:#A6F484;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+}
+.share_submit:hover {
+    background-color: green;
+    color: white;
+}
+
+.sbutton_parent {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
+.share_playlist_return_parent {
+    display: flex;
+    justify-content: center;
+}
+
+.share_playlist_return_button {
+    display: flex;
+    justify-content: center;
+    background-color:#A6F484;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+}
+
+.share_playlist_return_button:hover {
+    background-color: green;
+    color: white;
+}
+
+/* playlist edit page */
+
+.biggest {
+    display: flex;
+    justify-content: center;
+}
+
+.playlist_parent {
+    display: flex;
+    flex-direction: column;
+}
+
+.playlist_info_parent {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 15px;
+    border: 3px solid grey;
+    border-radius: 4px;
+    width: 1000px;
+}
+
+.playlist_search_info_parent {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 15px;
+    border: 3px solid grey;
+    border-radius: 4px;
+    width: 1000px;
+}
+
+.included_songs {
+    margin: 5px;
+}
+
+.update_playlist_button {
+    display: flex;
+    justify-content: center;
+    background-color:#A6F484;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+}
+
+
+.searchspotify {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+    padding: 20px;
+}
+
+.playlist_text_field {
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+    font-size: 20px;
+    color: grey;
+}
+
+.search_field {
+    width: 190px;
+    height: 30px;
+    margin: 0px 5px 0px 10px;
+    font-size: 20px;
+    color: grey;
+}
+
+.spotifyparent {
+    display: flex;
+    justify-content: center;
+}
+
+.spotparent {
+    display: flex;
+    justify-content: center;
+    background-color:#A6F484;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+}
+
+.spotifybutton {
+    display: flex;
+    justify-content: center;
+    background-color:#A6F484;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+}
+
+.spotifybutton:hover {
+    background-color: green;
+    color: white;
+}
+
+.edit_playlist_return_parent {
+    display: flex;
+    justify-content: center;
+}
+
+.edit_playlist_return_button {
+    display: flex;
+    justify-content: center;
+    background-color:#A6F484;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+}
+
+.edit_playlist_return_button:hover {
+    background-color: green;
+    color: white;
+}
+
+/* New Playlist Page */
+
+.new_playlist_container {
+    display: flex;
+    justify-content: center;
+}
+
+.new_playlist_item {
+    display: flex;
+    justify-content: center;
+    border: 3px solid grey;
+    border-radius: 25px;
+    width: 800px;
+    font-size: 20px;
+    color: grey;
+    font-family: 'Roboto', sans-serif;
+    margin: 5px;
+    padding: 10px;
+}
+
+.create_playlist_button_container {
+    display: flex;
+    justify-content: center;
+}
+
+.create_playlist_button {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    background-color:#A6F484;
+    font-size: 20px;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    width: 195px;
+    margin: 10px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.create_playlist_button:hover {
+    background-color: green;
+    color: white;
+}
+
+.playlist_error_message {
+    text-align: center;
+    color: #a10623; 
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
 }

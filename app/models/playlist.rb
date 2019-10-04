@@ -40,4 +40,5 @@ class Playlist < ApplicationRecord
   def self.random_playlist
     @playlist = Playlist.all.sample
   end
+
 end

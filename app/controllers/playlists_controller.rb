@@ -1,11 +1,12 @@
 require 'rspotify'
+require 'pry'
 
 def client_id
-    client_id = File.read("./id.env")
+    client_id = File.read("./id.env").chomp
 end
 
 def client_secret
-    client_secret = File.read("./secret.env")
+    client_secret = File.read("./secret.env").chomp
 end
 
 RSpotify::authenticate(client_id, client_secret)
