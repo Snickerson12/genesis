@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    background-image: url("spinning_record_background.png");
 }
 
 h1 {
@@ -119,8 +120,8 @@ li {
 }
 
 .navbar li a:hover {
-    color: #111;  
-}     
+    color: #111;
+}
 
 .flex-container {
     display: flex;
@@ -159,9 +160,9 @@ li {
 }
 
 .navbar-b li a:hover {
-    color: #111;  
-} 
-  
+    color: #111;
+}
+
 /* Add a color to the active/current link */
 .navbar-b.active {
     background-color: #4CAF50;
@@ -213,15 +214,15 @@ li {
     -webkit-box-shadow: 0 1px whitesmoke;
     box-shadow: 0 1px whitesmoke;
   }
-   
+
   .login p {
     margin: 20px 0 0;
   }
-   
+
   .login p:first-child {
     margin-top: 0;
   }
-   
+
   .login input[type=text], .login input[type=password] {
     width: 278px;
   }
@@ -574,3 +575,79 @@ li {
     margin-bottom: 10px;
 }
 
+/* Playlist container */
+
+.playlist-container {
+  padding: 0;
+  margin: 5px;
+  list-style: none;
+  display: flex;
+  border: 3px solid gray;
+  border-radius: 4px;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
+  width: 300px;
+
+
+}
+
+.playlist-item-head {
+  background: #2F4F4F;
+  padding: 5px;
+  margin-top: 10px;
+  line-height: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.playlist-item-sub-head {
+  background: #F0F8FF;
+  padding: 5px;
+  margin-top: 10px;
+  line-height: 20px;
+  color: #2F4F4F;
+  font-weight: bold;
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.playlist-item-embedded-track {
+  background: gray;
+  padding: 5px;
+  margin-top: 10px;
+  line-height: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.playlist-item-button {
+  background: #A6F484;
+  padding: 5px;
+  margin-top: 10px;
+  line-height: 20px;
+  color: black;
+  font-weight: bold;
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.playlist-item-like-button {
+  background: #A6F484;
+  padding: 5px;
+  margin-top: 10px;
+  line-height: 20px;
+  color: black;
+  font-weight: bold;
+  font-size: 1em;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}

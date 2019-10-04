@@ -1,21 +1,22 @@
-
+<% require 'pry' %>
 <h1>Public Playlists </h1>
 
 <div class="signupcont">
   <% if !current_user %>
-    <div class = "homebuttons"> 
+    <div class = "homebuttons">
     <li> <%= link_to "Create an Account", new_user_path, :class => "newuser" %></li>
-    <li> <%= link_to "Sign in", login_path, :class => "usersignin" %></li> 
+    <li> <%= link_to "Sign in", login_path, :class => "usersignin" %></li>
     </div>
   <% end %>
 </div>
 <br>
+<% p1 = @playlist %>
+<% p2 = @playlist_two %>
 
   <div class="flex-container">
-    <div><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXadOVCgGhS7j" width="400" height="350" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
-    <div><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8jnAPF7Iiqp" width="400" height="350" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
-    <div><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4osfY3zybD2" width="400" height="350" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
-  
+    <%= render "playlists/playlist_container", playlist: @playlist, class: 'flex-item'%>
+    <%= render 'playlists/playlist_container', playlist: @plyalist_two, class: 'flex-item' %>
+
   </div>
 
 
