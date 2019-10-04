@@ -1,8 +1,11 @@
+<div class = "playlist_error_message">
+
 <% if flash[:errors] %>
   <% flash[:errors].each do |error|  %>
     <%= error %>
   <% end %>
 <% end %>
+</div>
 <div class="biggest">
   <div class = "playlist_parent">
     <div class = "playlist_info_parent">
@@ -31,7 +34,7 @@
           <div class="searchspotify">
           <br>
           <p><form></p>
-            <input type="text" name="search" placeholder="Add Songs" class="search_field"> 
+            <input type="text" name="search" placeholder="Add Songs" class="search_field">
             <br>
             <input type="submit" value="Search" class="update_playlist_button">
           <p></form></p>
@@ -57,7 +60,7 @@
           <% end %>
         <% end %>
       <%# </div> %>
-      
+
     </div>
   </div>
 </div>

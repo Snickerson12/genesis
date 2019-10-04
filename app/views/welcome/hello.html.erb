@@ -1,4 +1,3 @@
-<% require 'pry' %>
 <h1>Public Playlists </h1>
 
 <div class="signupcont">
@@ -10,27 +9,20 @@
   <% end %>
 </div>
 <br>
-<% p1 = @playlist %>
-<% p2 = @playlist_two %>
 
-  <div class="hello-flex-container">
-    <div class="flex-item">
-      <% @playlist = @playlist.random_playlist -%>
-      <label>Random playlist:</label>
-      <%= render "playlists/playlist_container", playlist: @playlist, class: 'flex-item'%>
-    </div>
-    <div class="flex-item">
-      <% @playlist = @playlist.most_liked -%>
-      <label>Playlist with the most likes: (<%= @playlist.likes %> likes)</label>
-      <%= render 'playlists/playlist_container', playlist: @plyalist, class: 'flex-item' %>
-    </div>
-    <div class="flex-item">
-      <% @playlist = @playlist.most_songs -%>
-      <label>Playlist with the most songs: (<%= @playlist.songs.count %> songs)</label>
-      <%= render 'playlists/playlist_container', playlist: @plyalist %>
-    </div>
-
+<div class="welcome-playlist-container">
+    <% @playlist = Playlist.most_liked %>
+      <div class="welcome-hello-header">Most liked <br><br>
+        <%= render './playlists/show', model: @playlist %></div>
+    <% @playlist = Playlist.most_songs %>
+      <div class="welcome-hello-header">Most songs<br><br>
+        <%= render './playlists/show', model: @playlist %></div>
+    <% @playlist = Playlist.random_playlist %>
+      <div class="welcome-hello-header">Random<br><br>
+        <%= render './playlists/show', model: @playlist %></div>
   </div>
+
+</div>
 
 
 <!--

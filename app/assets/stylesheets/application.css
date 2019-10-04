@@ -158,10 +158,10 @@ li {
     overflow: auto;
     min-height: 0;
     height: 100%;
-    max-height: 450px;
     width: 400px;
+    max-height: 450px;
     color: #eef2f5;
-    margin: 10px 35px;
+    margin: 0 auto;
   }
 
   .playlist-title {
@@ -861,4 +861,74 @@ li {
     color: #a10623;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
+}
+
+/* Playlist-Show-Page */
+
+.center-playlist-container{
+  display: flex;
+  justify-content: center;
+}
+
+.playlist-show-container {
+  display: inline-flex; /* or inline-flex */
+  flex-direction: column;
+  justify-content: center;
+  height: 500px;
+  border: 3px solid grey;
+  border-radius: 4px;
+}
+
+.playlist-show-song-display-container {
+  display: inline-flex; /* or inline-flex */
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  overflow: auto;
+  padding-top: 120px;
+  margin-bottom: auto;
+}
+
+.playlist-show-song-display-item {
+  padding-left: 2px;
+}
+.playlist-show-likes {
+  color: rgb(107, 106, 106);
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+.playlist-show-likes-button {
+  background-color:#A6F484;
+  font-size: 20px;
+  color: white;
+  padding: 5px 5px;
+  border-radius: 4px;
+  width: 195px;
+  margin: 10px;
+
+}
+
+.playlist-show-likes-button:hover {
+    background-color: green;
+    color: white;
+}
+
+/* Welcome Hello Page */
+
+.welcome-playlist-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+
+}
+
+
+.welcome-hello-header {
+  color: rgb(107, 106, 106);
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.welcome-hello-render {
 }
