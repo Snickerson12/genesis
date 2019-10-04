@@ -11,11 +11,41 @@
 </div>
 <br>
 
+
+<div class="flex-container">
+<div class="section">
+  <div class="playlist-title">
+  <% @playlist = Playlist.most_liked %>
+  <h2 align="center">Most Liked</h2>
+  <h2 align="center"><%= link_to @playlist.name, @playlist %></h2>
+  </div>
+  <div class="playlist-title">
+  <% @playlist = Playlist.most_songs %>
+  <h2 align="center">Most Songs</h2>
+  <h2 align="center"><%= link_to @playlist.name, @playlist %></h2>
+  </div>
+  <div class="playlist-title">
+  <% @playlist = Playlist.random_playlist %>
+  <h2 align="center">Random</h2>
+  <h2 align="center"><%= link_to @playlist.name, @playlist %></h2>
+  </div>
+  </div>
+</div>
   <div class="flex-container">
-    <div><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXadOVCgGhS7j" width="400" height="350" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
-    <div><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8jnAPF7Iiqp" width="400" height="350" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
-    <div><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4osfY3zybD2" width="400" height="350" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>
-  
+  <div class="section">
+  <% @playlist = Playlist.most_liked %>
+    <div class="playlist">
+    <%= render 'show', model: @playlist %>
+    </div>
+    <% @playlist = Playlist.most_songs %>
+    <div class="playlist">
+    <%= render 'show', model: @playlist %>
+    </div>
+    <% @playlist = Playlist.random_playlist %>
+    <div class="playlist">
+    <%= render 'show', model: @playlist %>
+    </div>
+    </div>
   </div>
 
 

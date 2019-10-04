@@ -123,9 +123,47 @@ li {
 }     
 
 .flex-container {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section {
+    display: flex;
+  }
+
+  .playlist {
+    flex-grow: 1;
+    overflow: auto;
+    min-height: 0;
+    height: 100%;
+    max-height: 450px;
+    width: 400px;
+    color: #eef2f5;
+    background-color: #111;
+    margin: 10px 35px;
+  }
+
+  .playlist-show {
+    flex-grow: 1;
+    overflow: auto;
+    min-height: 0;
+    height: 100%;
+    max-height: 450px;
+    width: 400px;
+    color: #eef2f5;
+    margin: 10px 35px;
+  }
+
+  .playlist-title {
+    flex-grow: 1;
+    overflow: auto;
+    min-height: 0;
+    width: 400px;
   }
 
 
