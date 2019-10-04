@@ -10,13 +10,15 @@
 
 </div>
 
-<div class="playlist-title">
-<h2 align="center">Created by: <%= link_to @playlist.creator.name, user_path(@playlist.creator) %></h2>
-</div>
-<br>
-<div class="playlist-show">
-  <%= render 'show', model: @playlist %>
-</div>
+
+<div class="flex-container">
+  <div class="playlist-title">
+  <h2>Created by: <%= link_to @playlist.creator.name, user_path(@playlist.creator) %></h2>
+  </div>
+  <div class="playlist">
+    <%= render 'show', model: @playlist %>
+    </div>
+  </div>
 
 
 <h2>Likes: <%= @playlist.likes %></h2>

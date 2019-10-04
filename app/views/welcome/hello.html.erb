@@ -14,7 +14,6 @@
 
 <div class="flex-container">
 <div class="section">
-
   <div class="playlist-title">
   <% @playlist = Playlist.most_liked %>
   <h2 align="center">Most Liked</h2>
@@ -32,24 +31,20 @@
   </div>
   </div>
 </div>
-
   <div class="flex-container">
   <div class="section">
   <% @playlist = Playlist.most_liked %>
     <div class="playlist">
     <%= render 'show', model: @playlist %>
     </div>
-
     <% @playlist = Playlist.most_songs %>
     <div class="playlist">
     <%= render 'show', model: @playlist %>
     </div>
-
     <% @playlist = Playlist.random_playlist %>
     <div class="playlist">
     <%= render 'show', model: @playlist %>
     </div>
-
     </div>
   </div>
 
