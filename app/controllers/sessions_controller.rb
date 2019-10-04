@@ -9,7 +9,11 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       redirect_to root_path
+    elsif @user
+      flash[:errors] = @user.errors.full_messages
+      redirect_to login_path 
     else
+      flash[:errors] = ["Please enter valid credentials"]
       redirect_to login_path
     end
   end

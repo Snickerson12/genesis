@@ -9,4 +9,30 @@
     <% end %>
 </div>
 
-<%= render 'playlist_container', model: @playlist %>
+
+<div class="flex-container">
+  <div class="playlist-title">
+  <h2>Created by: <%= link_to @playlist.creator.name, user_path(@playlist.creator) %></h2>
+  </div>
+  <div class="playlist">
+    <%= render 'show', model: @playlist %>
+    </div>
+  </div>
+
+
+<h2>Likes: <%= @playlist.likes %></h2>
+<br>
+<%= button_to "like" , like_path(@playlist)%>
+<br>
+<h2>This playlist is shared with:</h2>
+<br>
+<ul>
+  <% @playlist.listeners.each do |listener| %>
+    <li><%= link_to listener.name, listener %></li>
+  <% end %>
+</ul>
+<br>
+
+<%= @playlist.public_display %>
+
+<div class="filler"></div>

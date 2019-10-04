@@ -16,7 +16,7 @@ class Playlist < ApplicationRecord
     end
   end
 
-  def most_liked
+  def self.most_liked
     most_liked = 0
     Playlist.all.each do |playlist|
       if playlist.likes > most_liked
@@ -27,7 +27,7 @@ class Playlist < ApplicationRecord
     @playlist
   end
 
-  def most_songs
+  def self.most_songs
     most_songs = 0
     Playlist.all.each do |playlist|
       if playlist.songs.count > most_songs
@@ -39,7 +39,8 @@ class Playlist < ApplicationRecord
 
   end
 
-  def random_playlist
+  def self.random_playlist
     @playlist = Playlist.all.sample
   end
+
 end
