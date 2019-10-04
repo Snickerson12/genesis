@@ -3,48 +3,68 @@
     <%= error %>
   <% end %>
 <% end %>
-
-  <%= form_with model: @playlist do |f| %>
-      <%= f.label "name" %>
-      <%= f.text_field :name %><br>
-      <%= f.hidden_field(:creator_id) %>
-      <%= f.label 'Private?' %>
-      <%= f.check_box :private %><br>
-      <%= f.label "songs already in playlist:" %><br>
-      <%= f.collection_check_boxes :song_ids, @playlist.songs, :id, :title, include_hidden: false do |b|  %>
-        <%= b.label(class: "check_box") do %>
-          <%= b.check_box(class: "check_box") %>
-          <%= b.object.title %> - <%= b.object.artist %> [<%= b.object.album %>]
-          </br>
+<div class="biggest">
+  <div class = "playlist_parent">
+    <div class = "playlist_info_parent">
+    <%= form_with model: @playlist do |f| %>
+        <%= f.label "name" %>
+        <%= f.text_field :name, :class => "playlist_text_field" %><br>
+        <%= f.hidden_field(:creator_id) %>
+        <%= f.label 'Private?' %>
+        <%= f.check_box :private %><br>
+        <div class = "included_songs">
+        <%= f.label "songs already in playlist:" %><br>
+        <%= f.collection_check_boxes :song_ids, @playlist.songs, :id, :title, include_hidden: false do |b|  %>
+          <%= b.label(class: "check_box") do %>
+            <%= b.check_box(class: "check_box") %>
+            <%= b.object.title %> - <%= b.object.artist %> [<%= b.object.album %>]
+            </br>
+          <% end %>
         <% end %>
-      <% end %>
-      <p><%= f.submit %></p>
-  <% end %>
+        </div>
+        <div><%= f.submit "update playlist", :class => "update_playlist_button" %></div>
+    <% end %>
+    </div>
+    <div class = "playlist_search_info_parent">
 
-      <br>
-      <p><form></p>
-        Search Spotify:<br><br>
-        <input type="text" name="search" placeholder="Search">
-        <br>
-        <input type="submit" value="Search">
-      <p></form></p>
+        <%# <div class = "spotifyparent"> %>
+          <div class="searchspotify">
+          <br>
+          <p><form></p>
+            <input type="text" name="search" placeholder="Add Songs" class="search_field"> 
+            <br>
+            <input type="submit" value="Search" class="update_playlist_button">
+          <p></form></p>
+          </div>
 
-      <% if params[:search] && params[:search] != "" %>
-        <% results = RSpotify::Track.search(params[:search])[0..9]%>
-      <% end %>
+        <% if params[:search] && params[:search] != "" %>
+          <% results = RSpotify::Track.search(params[:search])[0..9]%>
+        <% end %>
 
-      <% if results && results != []%>
-        <%= form_with model: @playlist do |f| %>
+        <% if results && results != []%>
+          <%= form_with model: @playlist do |f| %>
 
-          <%= f.fields_for :songs do |song| %>
-            <%= song.collection_check_boxes :spotify_ids, results, :id, :name, include_hidden: false do |b|  %>
-              <%= b.label(class: "check_box") do %>
-                <%= b.check_box(class: "check_box") %>
-                <%= b.object.name %> - <%= b.object.artists.first.name %> [<%= b.object.album.name %>]
-                </br>
+            <%= f.fields_for :songs do |song| %>
+              <%= song.collection_check_boxes :spotify_ids, results, :id, :name, include_hidden: false do |b|  %>
+                <%= b.label(class: "check_box") do %>
+                  <%= b.check_box(class: "check_box") %>
+                  <%= b.object.name %> - <%= b.object.artists.first.name %> [<%= b.object.album.name %>]
+                  </br>
+                <% end %>
               <% end %>
             <% end %>
+          <p><%= f.submit "Add Songs", :class => "update_playlist_button"  %></p>
           <% end %>
-        <p><%= f.submit "Add Songs" %></p>
         <% end %>
-      <% end %>
+      <%# </div> %>
+      
+    </div>
+  </div>
+</div>
+
+<div class = "edit_playlist_return_parent">
+  <%= link_to "Return", playlist_path, :class => "edit_playlist_return_button"%>
+</div>
+
+
+<div class="filler"></div>

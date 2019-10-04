@@ -9,8 +9,6 @@ def client_secret
     client_secret = File.read("./secret.env").chomp
 end
 
-# binding.pry
-
 RSpotify::authenticate(client_id, client_secret)
 
 

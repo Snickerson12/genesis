@@ -1,1 +1,25 @@
-<%= render 'form', model: @playlist %>
+<h1> Create a New Playlist</h1>
+
+<div class = "playlist_error_message">
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error|  %>
+    <%= error %>
+  <% end %>
+<% end %>
+</div>
+
+<div class = "new_playlist_container">
+    <div class="new_playlist_item">
+    <%= form_with model: @playlist do |f| %>
+        <%= f.label "name" %>
+        <%= f.text_field :name %><br>
+        <%= f.hidden_field(:creator_id) %>
+        <%= f.label 'Private?' %>
+        <%= f.check_box :private %>
+    </div>
+</div>
+    <div class="create_playlist_button_container">
+        <%= f.submit "Create Playlist", :class => "create_playlist_button" %>
+        <%= link_to "Return to Index", playlists_path, :class => "create_playlist_button"%>
+    </div>
+    <% end %>
