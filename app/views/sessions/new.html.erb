@@ -2,6 +2,15 @@
 <div class="container">
   <div class="login">
     <h1>Login to Genesis</h1>
+
+    <div class = "login_error_message">
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error|  %>
+        <%= error %>
+      <% end %>
+    <% end %>
+    </div>
+
     <%= form_for :user, url: '/login' do |f| %>
       <div> Username: <%= f.text_field :name, :class => 'username' %> 
       <div> Password: <%= f.password_field :password, :class => 'password' %> </div>

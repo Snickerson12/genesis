@@ -17,10 +17,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    # raise @user.inspect
-    return redirect_to controller: 'users', action: 'new' unless @user.save
-    session[:user_id] = @user.id
-    redirect_to controller: 'welcome', action: 'hello'
+    if @user.valid?
+      @user.save
+      session[:user_id] = @user.id
+      redirect_to controller: 'welcome', action: 'hello'
+    else
+      flash[:errors] = @user.errors.full_messages
+      redirect_to controller: 'users', action: 'new'
+    end
   end
 
   def spotify

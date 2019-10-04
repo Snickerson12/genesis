@@ -1,5 +1,9 @@
 <h1>User Profile for: <%= @user.name %></h1>
 
+<div class = "create_playlist_showpage_parent">
+  <%= link_to "Create a New Playlist", new_playlist_path, :class => "create_playlist_showpage_button"%>
+</div>
+
 <div class="usercontainer">
   <div class="userplaylists">
     <h2>Playlists Created by <%= @user.name %></h3>

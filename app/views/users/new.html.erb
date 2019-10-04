@@ -1,6 +1,15 @@
 <div class = "usercontainer"> 
   <div class = "createuser"> 
     <h1> Create a New Account</h1> 
+
+    <div class = "creation_error_message">
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error|  %>
+        <%= error %>
+      <% end %>
+    <% end %>
+    </div>
+
     <%= form_for @user, controller: 'users', action: 'create' do |f| %>
       <div>
         <div><%= f.label "Username:" %>
