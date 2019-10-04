@@ -1,11 +1,6 @@
-body {
-  /* background-position: right top;
-  background-image: url("./messy_disc.gif");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  opacity: 0.5;
-  filter: alpha(opacity=50); /* For IE8 and earlier */ */
-
+* {
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
