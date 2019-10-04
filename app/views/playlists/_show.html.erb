@@ -1,0 +1,28 @@
+<div class="playlist-show-container">
+  <div class="playlist-show-song-display-container">
+
+    <% @playlist.songs.each do |song| %>
+      <div class="playlist-show-song-display-item">
+        <iframe src="https://open.spotify.com/embed/track/<%= song.spotify_id %>" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="playlist-show-likes">
+    Likes: <%= @playlist.likes %>
+
+    <%= button_to "like" , like_path(@playlist), class: "playlist-show-likes-button"%>
+  </div>
+
+  <div class="playlist-show-likes">
+    This playlist is shared with:
+    <% @playlist.listeners.each do |listener| %>
+      <%= link_to listener.name, listener %>
+    <% end %>
+  </div>
+
+  <div class="playlist-show-likes">
+    <%= @playlist.public_display %>
+  </div>
+
+</div>

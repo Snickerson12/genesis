@@ -1,0 +1,6 @@
+<hr style="height:4px; visibility:hidden;" />
+<ul align="center">
+  <% @playlist.songs.each do |song| %>
+    <p><iframe src="https://open.spotify.com/embed/track/<%= song.spotify_id %>" width="400" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></p>
+    <% end %>
+</ul>

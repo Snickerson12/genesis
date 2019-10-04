@@ -1,4 +1,3 @@
-<h1>Playlist Name: <%= @playlist.name %></h1>
 
 <div class="pbuttonparent">
   <% if @playlist.private == true || @playlist.creator_id == session[:user_id] %>
@@ -10,29 +9,10 @@
     <% end %>
 </div>
 
-<h2>Created by: <%= @playlist.creator.name %></h2>
 
-<h3>Songs:</h3>
-<ul>
-  <% @playlist.songs.each do |song| %>
-    <p><%= song.title %></p>
-    <iframe src="https://open.spotify.com/embed/track/<%= song.spotify_id %>" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-    <% end %>
-</ul>
-<br>
-<h2>Likes: <%= @playlist.likes %></h2>
-<br>
-<%= button_to "like" , like_path(@playlist)%>
-<br>
-<h2>This playlist is shared with:</h2>
-<br>
-<ul>
-  <% @playlist.listeners.each do |listener| %>
-    <li><%= link_to listener.name, listener %></li>
-  <% end %>
-</ul>
-<br>
-
-<%= @playlist.public_display %>
-
-<div class="filler"></div>
+  <h2 align="center">Created by: <%= link_to @playlist.creator.name, user_path(@playlist.creator) %></h2>
+  </div>
+  <div class="center-playlist-container">
+    <%= render 'show', model: @playlist %>
+  </div>
+  <div class="filler"></div>
