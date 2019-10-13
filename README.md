@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Genesis Mixtaper Mod 2 Final Project
 
-Things you may want to cover:
+Users can create an account on Genesis and create personal playlists utilizing the Spotify API.
 
-* Ruby version
+Playlists can be set to public or private depending on if users would like anyone with an account to see their playlist or just others users the playlist is directly shared with. 
 
-* System dependencies
+Users can create new playlists, invite othes to edit and make additions to playlists, or listen to their playlists within the Genesis application. 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Playlists are created by searching for songs within the Spotify API which will allow users to select from the top ten most relevant search results to then add to their playlist.
